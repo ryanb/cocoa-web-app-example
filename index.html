@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Cocoa Web App Example</title>
+  <script type="text/javascript" charset="utf-8">
+    function changeIcon(name) {
+      if (window.app) {
+        window.app.changeIcon_(name);
+      }
+      document.getElementById("message").style.display = "";
+    }
+    
+    function changeGreeting(greeting) {
+      document.getElementById("greeting").innerHTML = greeting;
+    }
+  </script>
+  <style type="text/css" media="screen">
+    body {
+      text-align: center;
+      font-family: Helvetica;
+      font-size: 14px;
+    }
+    
+    #icons a {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="greeting">Hello World!</h1>
+  <p>Click an icon below.</p>
+  <div id="icons">
+    <a href="#" onclick="javascript:changeIcon('apple.png')"><img src="apple.png" width="128" height="128" alt="Apple"></a>
+    <a href="#" onclick="javascript:changeIcon('dogcow.png')"><img src="dogcow.png" width="128" height="128" alt="Dogcow"></a>
+    <a href="#" onclick="javascript:changeIcon('mac.png')"><img src="mac.png" width="128" height="128" alt="Mac"></a>
+  </div>
+  <div id="message" style="display: none">
+    <p>Notice the icon in the dock changes?</p>
+    <p>Now select the <strong>Try Me</strong> menu in the menu bar.</p>
+  </div>
+</body>
+</html>

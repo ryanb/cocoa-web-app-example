@@ -1,0 +1,5 @@
+COCOA WEB APP EXAMPLE
+
+This is an example Cocoa application which displays an HTML page in a WebView. It demonstrates how to communicate between Objective-C and JavaScript through the WebScriptObject. If you have a web app which could benefit from desktop integration, I highly recommend creating a Cocoa app which interacts with it.
+
+To try it out, open the "Cocoa Web App.xcodeproj" file in Xcode and click "Build and Run". See the code in "AppDelegate.m" and "index.html" to see how it works.
