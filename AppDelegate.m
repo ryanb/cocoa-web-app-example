@@ -3,9 +3,6 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Allow this class to be usable through the "window.app" object in JavaScript
-	// This could be any Objective-C class
-	[[webView windowScriptObject] setValue:self forKey:@"app"];
 	[webView setMainFrameURL:[self appURL]];
 }
 
@@ -47,6 +44,13 @@
 // This is triggered from the Change Greeting menu item.
 - (IBAction)changeGreeting:(id)sender {
 	[[webView windowScriptObject] evaluateWebScript:@"changeGreeting('Hello from Objective-C!')"];
+}
+
+// This delegate method gets triggered every time the page loads, but before the JavaScript runs
+- (void)webView:(WebView *)webView windowScriptObjectAvailable:(WebScriptObject *)windowScriptObject {
+	// Allow this class to be usable through the "window.app" object in JavaScript
+	// This could be any Objective-C class
+	[windowScriptObject setValue:self forKey:@"app"];
 }
 
 @end
